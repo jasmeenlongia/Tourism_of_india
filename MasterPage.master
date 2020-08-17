@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Travel Portel</title>
+    <style type="text/css">
+        .jumbotron {
+        text-align:center;
+        }
+        .auto-style1 {
+            width: 100%;
+            height: 398px;
+            margin-top:20px;
+        }
+        .auto-style2 {
+            height: 284px;
+        }
+        .auto-style4 {
+            height: 75px;
+        }
+        .auto-style5 {
+            height: 70px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+                
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="new1.css"/>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+     
+    <div class="container body-content">
+        <table class="auto-style1" border="0">
+            <tr>
+                <td class="jumbotron" colspan="2" title="TOURISM of INDIA"><h1 >TOURISM of INDIA</h1></td>
+            </tr>
+            
+            <tr>
+                <td class="auto-style5" >
+                    <asp:Menu ID="Menu1" runat="server" BackColor="Transparent" DynamicHorizontalOffset="2"
+                    Font-Names="Verdana" ForeColor="Black" Orientation="Horizontal"
+                    StaticSubMenuIndent="10px" Font-Bold="True" Height="40px" Width="1150px">
+                    <StaticMenuItemStyle HorizontalPadding="69px" VerticalPadding="5px" />
+                    <DynamicHoverStyle BackColor="#A95E49" ForeColor="White" />
+                    <DynamicMenuStyle BackColor="#E7D0A7" />
+                    <StaticSelectedStyle BackColor="Transparent" />
+                    <DynamicSelectedStyle BackColor="Transparent" />
+                    <DynamicMenuItemStyle HorizontalPadding="69px" VerticalPadding="5px" />
+                    <Items>
+
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+
+                        <asp:MenuItem Text="Destinations" Value="Destinations" NavigateUrl="~/Default.aspx#package"></asp:MenuItem>
+
+                        <asp:MenuItem Text="Plan My Trip" Value="PlanTrip" NavigateUrl="~/PlanTrip.aspx"></asp:MenuItem>
+
+                        <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+
+                        <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="~/About.aspx"></asp:MenuItem>
+
+                    </Items>
+                    <StaticHoverStyle BackColor="#AF6751" ForeColor="White" />
+                </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+                </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6>&copy; <%: DateTime.Now.Year %> - ALL RIGHTS RESERVED</h6>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </form>
+</body>
+</html>
